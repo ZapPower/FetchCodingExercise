@@ -34,18 +34,18 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
+        // Create item view model
         val itemViewModel = ItemViewModel()
 
         setContent {
             FetchCodingExerciseTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { padding ->
-                    Column (modifier = Modifier.padding(padding)) {
-                        ExerciseHeader(
-                            modifier = Modifier.background(Color(247,247,247))
-                        )
+                    Column (modifier = Modifier.padding(padding).fillMaxSize()
+                        .background(Color(247,247,247))
+                    ) {
+                        ExerciseHeader()
                         SearchList(
-                            itemViewModel = itemViewModel,
-                            modifier = Modifier.background(Color(247,247,247))
+                            itemViewModel = itemViewModel
                         )
                     }
                 }

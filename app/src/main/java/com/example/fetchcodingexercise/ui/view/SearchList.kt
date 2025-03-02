@@ -107,10 +107,18 @@ fun SearchList(
         ) {
             if (itemViewModel.items.value.isEmpty()) {
                 // Show a loading indicator when the list is empty and loading
-                if (isLoading) {
-                    CircularProgressIndicator(Modifier.align(Alignment.CenterHorizontally))
-                } else {
-                    Text("Nothing's here...", Modifier.align(Alignment.CenterHorizontally))
+                Box(
+                    modifier = modifier.fillMaxWidth()
+                        .padding(top = 8.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    if (isLoading) {
+                        CircularProgressIndicator()
+                    } else {
+                        Text("Nothing's here...",
+                            fontWeight = FontWeight.Light,
+                            fontStyle = FontStyle.Italic)
+                    }
                 }
             } else {
                 // Filtered list based on item filter function below

@@ -18,7 +18,7 @@ class ItemViewModel : ViewModel() {
     private val _items = mutableStateOf<List<Item>>(emptyList())
 
     // Holds the private state for loading
-    private val _isLoading = mutableStateOf(false)
+    private val _isLoading = mutableStateOf(true)
 
     // Publicly viewable state list of items
     val items: State<List<Item>> = _items
